@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SectionTitle from "./SectionTitle";
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
           className="max-w-full sm:max-w-sm rounded-lg shadow-2xl"
         />
         <div>
-          <h1 className="text-5xl font-bold pb-10">About Me</h1>
+          <SectionTitle title="About Me" />
           <p className="pb-3">
             I am an experienced web developer with a strong expertise in
             JavaScript and a focus on modern frameworks like React and Next.js.

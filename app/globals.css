@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .wrapper {
+    @apply container max-w-7xl mx-auto px-[16px] py-20;
+  }
+}
