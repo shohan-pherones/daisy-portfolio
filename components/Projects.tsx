@@ -11,14 +11,14 @@ const Projects = () => {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="card card-compact bg-base-100 w-96 shadow-xl"
+            className="card card-compact bg-base-100 w-full shadow-xl"
           >
             <figure className="h-60">
               <Image
                 src={project.image}
                 alt={project.title}
-                width={1920}
-                height={1080}
+                width={1280}
+                height={720}
                 className="w-full h-full object-cover"
               />
             </figure>
