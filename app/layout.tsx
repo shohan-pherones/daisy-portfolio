@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body className={spaceGrotesk.className}>
+        <Toaster position="top-center" reverseOrder={false} />
         <Navbar />
         {children}
         <Footer />

@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { z } from "zod";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Loader2 } from "lucide-react";
 
 const formDataSchema = z.object({
   firstName: z.string().min(3).max(20),
@@ -20,14 +23,23 @@ const ContactForm = () => {
     message: "",
   });
   const [errorData, setErrorData] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     try {
+      setIsLoading(true);
+
       formDataSchema.parse(formData);
 
-      /* TO-DO */
+      const res = await axios.post("/api/contact", formData);
+
+      if (res) {
+        toast.success(res.data);
+      } else {
+        toast.error("Failed to send message");
+      }
 
       setFormData({
         firstName: "",
@@ -41,6 +53,8 @@ const ContactForm = () => {
       if (error instanceof z.ZodError) {
         setErrorData(error.issues);
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -129,8 +143,8 @@ const ContactForm = () => {
         />
         {checkErrors("message")}
       </div>
-      <button type="submit" className="btn btn-primary">
-        Submit
+      <button type="submit" disabled={isLoading} className="btn btn-primary">
+        {isLoading ? <Loader2 className="animate-spin" /> : "Submit"}
       </button>
     </form>
   );
