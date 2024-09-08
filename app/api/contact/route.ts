@@ -24,17 +24,3 @@ export async function POST(req: Request) {
     return new Response("Something went wrong", { status: 500 });
   }
 }
-
-export async function GET() {
-  try {
-    const messages = await prisma.message.findMany({
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
-
-    return Response.json(messages);
-  } catch (error) {
-    return new Response("Something went wrong", { status: 500 });
-  }
-}
