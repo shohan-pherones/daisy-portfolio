@@ -10,6 +10,7 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-10">
         {projects.map((project) => (
           <div
+            data-aos="fade-up"
             key={project.id}
             className="card card-compact bg-base-100 w-full shadow-xl"
           >

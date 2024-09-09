@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
       <nav>
-        <ul className="grid grid-flow-col gap-4">{navLinks}</ul>
+        <ul className="flex gap-4 flex-wrap justify-center">{navLinks}</ul>
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">

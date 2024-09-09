@@ -7,6 +7,7 @@ const About = () => {
     <div id="#about" className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <Image
+          data-aos="fade-left"
           src="/girl.jpg"
           alt="Nishi"
           width={1280}

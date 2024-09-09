@@ -8,6 +8,7 @@ const Skills = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-10">
         {skills.map((skill, index) => (
           <div
+            data-aos="fade-up"
             key={index + skill.name}
             className="flex flex-col items-center gap-2 border p-5 rounded-lg cursor-pointer hover:bg-accent hover:border-accent"
           >

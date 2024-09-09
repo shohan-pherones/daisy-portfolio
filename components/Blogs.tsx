@@ -9,7 +9,11 @@ const Blogs = () => {
       <SectionTitle title="Blogs" />
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-10">
         {blogs.map((blog) => (
-          <div key={blog.id} className="card bg-base-100 w-full shadow-xl">
+          <div
+            data-aos="fade-up"
+            key={blog.id}
+            className="card bg-base-100 w-full shadow-xl"
+          >
             <figure className="h-60">
               <Image
                 src={blog.cover}
